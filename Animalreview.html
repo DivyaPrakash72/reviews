@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comment Box</title>
+</head>
+<style>
+        * {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: aqua;
+}
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #130362;
+  padding: 20px;
+}
+
+.sidenav h2 {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+.sidenav a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+.sidenav a:hover {
+background-color: blue;
+text-align: right;
+
+}
+.content {
+  padding: 20px;
+  margin-left: 200px;
+}
+
+.comment-box {
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.name-input,
+.review-input {
+  padding: 10px;
+  border: 1px solid #130362;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #130362;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+body, h1, h2, h3, h4, h5, h6 { font-family: "Lato", sans-serif; }
+        .w3-bar, h1, button { font-family: "Montserrat", sans-serif; }
+        .fa-anchor, .fa-coffee { font-size: 200px; }
+        .container {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+        .content{
+          background-color: aqua;
+        }
+        .movie-profile-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+        .movie-image {
+            flex: 1;
+            background-color: #ff0000;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .movie-image img {
+            width: 100%;
+            border-radius: 5%;
+            margin-bottom: 4px;
+        }
+        .movie-details {
+            flex: 2;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            line-height: 1.5;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        button {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff0000;
+        }
+        /* Review Box Styles */
+        .review-box {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .review-box label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .review-box textarea,
+        .review-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .submitted-review {
+            border: 2px solid #2ecc71;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .submitted-review h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .submitted-review p {
+            color: #555;
+            line-height: 1.5;
+        }
+        /* All Reviews Box Styles */
+        .all-reviews {
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .all-reviews h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .all-reviews .review {
+            margin-bottom: 15px;
+        }
+        .all-reviews .review p {
+            margin: 5px 0;
+        }
+          /* Add your custom styles here */
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+</style>
+<body>
+    <nav class="sidenav">
+        <img src="URH.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <h2 href="#home"> Animal</h2>
+        <p>________________</p>
+        <i class="w3-hover-opacity"><a href="Animal.html">Back to Last page</a></i>
+        <p>________________</p>
+       <i class="fa fa-linkedin w3-hover-opacity"><a href="Index.html">Back to home page</a></i>
+        
+      </nav>
+      <main class="content">
+        <img src="Animal.png" alt="Norway" style="width:10%" class="w3-hover-opacity">
+        <h1>Animal</h1>
+        <h2>Users Review </h2>
+        <p> Share your opinion about this movie.</p>
+        
+        <p>_________________________________________________________</p>
+        
+  <h2>Leave a Review</h2>
+  <form action="Animal.php" method="get">
+    <label for="name">name</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for="review">review</label>
+    <textarea id="review" name="review"></textarea>
+    <br>
+    <!-- <input type="submit" value="Submit"> -->
+    <input type="submit" value="Submit">
+
+  <div id="comments"></div>
+  
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Submission</title>
+</head>
+<body>
+    <h1>Page 1: Submit Comment</h1>
+    
+    <form id="commentForm">
+        <label for="comment">Enter your comment:</label>
+        <input type="text" id="comment" name="comment" required>
+        <button type="button" onclick="submitComment()">Submit Comment</button>
+    </form>
+
+    <script>
+        function submitComment() {
+            var comment = document.getElementById('comment').value;
+            // Save the comment in localStorage for simplicity (replace with server-side storage in a real application)
+            localStorage.setItem('submittedComment', comment);
+            // Redirect to the second page
+            window.location.href = 'test02.html';
+        }
+    </script>
+</body>
+</html>

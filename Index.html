@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Movie Review hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: aqua;
+        }
+
+        .navbar {
+            background-color: #130362;
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar img {
+            max-width: 70px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+            font-size: 16px;
+        }
+
+        .navbar input[type="text"],
+        .navbar button[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .navbar button[type="submit"] {
+            background-color: #5c4caf;
+            color: white;
+            cursor: pointer;
+        }
+
+        .navbar01 :hover {
+            background-color: #270ea0;
+            font-size: large;
+        }
+
+        .navbar03 :hover {
+            background-color: #c2c0c0;
+            font-size: large;
+        }
+
+        .main-content {
+            height: 60vh;
+            width: 100%;
+            background-image: url('URHbackground.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo img {
+            width: 95px;
+            height: 60px;
+        }
+
+        .text h2 {
+            font-size: 40px;
+        }
+
+        .text p {
+            font-size: 15px;
+        }
+
+        .selection {
+            background-color: #130362;
+        }
+
+        .selection a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .selection01 :hover {
+            background-color: rgb(27, 85, 232);
+            font-size: large;
+        }
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 50px 0;
+        }
+
+        .description {
+            flex: 1;
+            margin-right: 50px;
+            text-align: justify;
+        }
+
+        .image {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: 15%;
+        }
+
+        .w3-row-padding {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            text-align: justify;
+            background-color: #130362;
+        }
+
+.w3-quarter {
+            width: 20%;
+            padding: 10px;
+            align-items: center;
+            box-sizing: border-box;
+            margin: 10px;
+            background-color: #270ea0;
+        }
+
+        .w3-quarter :hover {
+            transform: scale(1.1);
+        }
+
+        .w3-quarter p {
+            text-align: center;
+        }
+
+        .team {
+            background-color: #130362;
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .team img {
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            color: #fff;
+            background-color: #130362;
+        }
+
+        .guid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 50px 0;
+        }
+
+        .foot {
+            background-color: #130362;
+            color: aliceblue;
+            text-align: center;
+        }
+
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+.dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #270ea0;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+.dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+.dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+.dropdown-content a:hover {
+            background-color: #270ea0;
+        }
+
+.Contacts {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .Contacts h2 {
+    color: black;
+    text-align: center;
+    border-bottom: 3px solid black; 
+}
+
+  .Contacts  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .Contacts li {
+    margin: 10px 0;
+    font-size: 16px;
+    
+  }
+.social-icon {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 20px;
+    color: white;  /* Set the color to white */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover,
+.social-icon:active {
+    transform: scale(1.2);
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Your existing body content -->
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="URH.png" alt="Logo">
+        </div>
+
+        <!-- Update href attributes with the corresponding section ids -->
+        <form action="" class="navbar01">
+          <a href="#about">About</a>
+            <a href="#team">Team</a>
+            <a href="#contacts">Contacts</a>
+        </form>
+
+
+        <form action="" class="navbar03">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+    <!-- main-content -->
+
+    <div class="main-content">
+        <div class="text">
+            <h2>UNIVERSAL REVIEW HUB</h2>
+            <p>Share your opinions on Movies, TV Shows, Websites, Books, etc.… </p>
+        </div>
+    </div>
+
+    <div class="selection">
+        <form action="" class="selection01">
+            <div class="dropdown">
+                <a class="dropbtn">Books</a>
+                <div class="dropdown-content">
+                    <a href="Technical.html">Technical</a>
+                    <a href="Non-Fiction.html">Non-Fiction</a>
+                    <a href="Ficational.html">Ficational</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn">APPS</a>
+                <div class="dropdown-content">
+                    <a href="Editors.html">Editors</a>
+                    <a href="Games.html">Games</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn">Movies</a>
+                <div class="dropdown-content">
+                    <a href="Actionmovies.html">Action</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="Thriller.html">Thriller</a>
+                    <a href="Drama.html">Drama</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn">Internships</a>
+                <div class="dropdown-content">
+                    <a href="Cloud.html">Cloud</a>
+                    <a href="Data Science.html">Data Science</a>
+                    <a href="AI and ML.html">AI and ML</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!--About-->
+    <section id="about" class="about">
+      <div class="image">
+          <img src="URH.png" alt="About Image">
+      </div>
+      <div class="description">
+        <div class="description">
+          <div class="title">
+              <h1>About</h1>
+          </div>
+          <p>Universal Review Hub is an innovative online platform transforming the landscape of media critique.
+              Serving as a centralized hub, users can effortlessly share, explore, and contribute reviews across a
+              diverse range of media, books, movies, books, TV shows, Applications, etc. The platform's commitment to
+              inclusivity is evident through its user-friendly interface, designed to accommodate individuals of all
+              technological backgrounds, fostering a global community.</p>
+          <p>A standout feature is the robust rating system, offering a quick overview of public sentiment.
+              Contributors are encouraged to provide detailed reviews, enriching the platform with comprehensive
+              analyses, plot summaries, and character critiques. Going beyond traditional reviews, Universal Review Hub
+              fosters community engagement through active discussions, creating an interactive space where diverse
+              perspectives converge. The platform's algorithm-driven personalized recommendation system enhances the
+              user experience by suggesting media based on individual preferences, encouraging exploration, and
+              strengthening the sense of community. Privacy and security are paramount, with rigorous measures in place
+              to create a safe environment where users can freely express their opinions.</p>
+      </div>
+  </section>
+
+    <!--Team-->
+    <div id="team" class="title">
+        <h1>Team</h1>
+    </div>
+    <section id="about" class="about">
+      <div class="description">
+          <div class="title">
+              <h1>Project Guid</h1>
+          </div>
+          <p>Universal Review Hub is an innovative online platform transforming the landscape of media critique.
+              Serving as a centralized hub, users can effortlessly share, explore, and contribute reviews across a
+              diverse range of media, books, movies, books, TV shows, Applications, etc. The platform's commitment to
+              inclusivity is evident through its user-friendly interface, designed to accommodate individuals of all
+              technological backgrounds, fostering a global community.</p>
+      </div>
+      <div class="image">
+          <img src="URH.png" alt="About Image">
+      </div>
+        <div class="w3-row-padding">
+            <div class="w3-quarter w3-container w3-margin-bottom">
+                <img src="photo_2023-11-13_13-10-31.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container" style="background-color: rgb(228, 228, 228);">
+                    <h3 class="grey-box h3" style="text-align: center; color: rgb(0, 0, 0);">Divya Prakash</h3>
+                    <p>Project Member</p>
+                    <p>Id: 2100520160</p>
+                    <p>BCA III</p>
+                </div>
+            </div>
+
+            <div class="w3-quarter w3-container w3-margin-bottom">
+                <img src="prabhu.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container" style="background-color: rgb(228, 228, 228);">
+                    <h3 class="grey-box h3" style="text-align: center; color: rgb(0, 0, 0);">M.N.V. Prabhu Teja</h3>
+                    <p>Project Member</p>
+                    <p>Id: 2100520155</p>
+                    <p>BCA III</p>
+                </div>
+            </div>
+
+            <div class="w3-quarter w3-container w3-margin-bottom">
+                <img src="Joseph.png" alt="Norway" style="width: 100%;" class="w3-hover-opacity">
+                <div class="w3-container" style="background-color: rgb(228, 228, 228);">
+                    <h3 class="grey-box h3" style="text-align: center; color: rgb(0, 0, 0);">Anil Joseph </h3>
+                    <p>Project Member</p>
+                    <p>Id: 2100520173</p>
+                    <p>BCA III</p>
+                </div>
+            </div>
+
+            <div class="w3-quarter w3-container w3-margin-bottom">
+                <img src="photo_2023-11-13_13-10-31.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container" style="background-color: rgb(228, 228, 228);">
+                    <h3 class="grey-box h3" style="text-align: center; color: rgb(0, 0, 0);">T. Vanja </h3>
+                    <p>Project Member</p>
+                    <p>Id: 2100520201</p>
+                    <p>BCA III</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+  
+    <section id="contacts" class="foot">
+      <h1>Contacts</h1>
+  </section>
+  <ul>
+    <li>Phone: 6207633155</li>
+    <li>Email: 2100520160bca@gmail.com</li>
+</ul>
+
+<div>
+  <footer class="foot">
+      <h1>Social Media...</h1>
+      <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+          <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+          <i class="fa fa-instagram w3-hover-opacity"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" class="social-icon">
+          <i class="fa fa-twitter w3-hover-opacity"></i>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+          <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </a>
+      <p class="w3-medium">Thank you</p>
+  </footer>
+</div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          // Smooth scrolling for anchor links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                  e.preventDefault();
+  
+                  const targetId = this.getAttribute('href').substring(1);
+                  const targetElement = document.getElementById(targetId);
+  
+                  if (targetElement) {
+                      window.scrollTo({
+                          top: targetElement.offsetTop - document.querySelector('.navbar').offsetHeight,
+                          behavior: 'smooth'
+                      });
+                  }
+              });
+          });
+      });
+  </script>
+  
+</body>
+
+</html>

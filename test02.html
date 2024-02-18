@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Comment</title>
+</head>
+<body>
+    <h1>Page 2: Submitted Comment</h1>
+    
+    <div id="submittedComment">
+        <!-- Display the submitted comment -->
+        <strong>Submitted Comment:</strong> 
+        <span id="commentDisplay"></span>
+    </div>
+
+    <script>
+        // Retrieve the submitted comment from localStorage
+        var submittedComment = localStorage.getItem('submittedComment');
+        if (submittedComment) {
+            // Display the submitted comment on the second page
+            document.getElementById('commentDisplay').innerText = submittedComment;
+        } else {
+            // Redirect to the first page if no comment is found
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
